@@ -10,3 +10,6 @@ run project: flutter run --no-sound-null-safety
 3- Find '--disable-extensions'
 
 4- Add '--disable-web-security'
+
+# Preview
+![](https://github.com/HamTod/Covid/blob/master/assets/images/Animation.gif)
