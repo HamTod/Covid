@@ -1,3 +1,4 @@
+import 'package:animated_background/animated_background.dart';
 import 'package:covid/models/DateUtil.dart';
 import 'package:covid/models/covid_items.dart';
 import 'package:covid/services/api.dart';
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>  with TickerProviderStateMixin {
   final DateUtil _dateUtil = DateUtil();
   late Future<Covid> _futureCovid;
   // func add comma to number
@@ -30,23 +31,39 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: Container(
-        // ไล่สีพื้นหลัง
-        // decoration: const BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.topCenter,
-        //     end: Alignment.bottomCenter,
-        //     colors: [Colors.teal, Colors.indigo],
-        //     // colors: [Color(0xFFA16AE8), Color(0xFF583c7d)],
-        //   ),
-        // ),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/bg.png'),
-            fit: BoxFit.fill,
+      //appBar:AppBar(),
+      body: AnimatedBackground(
+        behaviour: RandomParticleBehaviour(
+          options: const ParticleOptions(
+            spawnMaxRadius: 50,
+            spawnMinSpeed: 10.00,
+            particleCount: 68,
+            spawnMaxSpeed: 50,
+            minOpacity: 0.3,
+            spawnOpacity: 0.4,
+            baseColor: Colors.blue,
           ),
         ),
+        vsync: this,
+
+        // ไล่สีพื้นหลัง
+    //     decoration: const BoxDecoration(
+    //       gradient: LinearGradient(
+    //         begin: Alignment.topCenter,
+    //         end: Alignment.bottomCenter,
+    //         colors: [Colors.teal, Colors.indigo],
+    //         // colors: [Color(0xFFA16AE8), Color(0xFF583c7d)],
+    //       ),
+    //     ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage('assets/images/bg.png'),
+        //     fit: BoxFit.fill,
+        //   ),
+        // ),
+
         child: FutureBuilder<Covid>(
           future: _futureCovid,
           builder: (context, snapshot) {
@@ -118,7 +135,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             'สถานการณ์ COVID-19',
             style: GoogleFonts.kanit(
-              color: Colors.white,
+              color: Colors.indigo.shade900,
               fontSize: 35.0,
               fontWeight: FontWeight.bold,
             ),
@@ -126,7 +143,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             'ในประเทศไทย ประจำสัปดาห์',
             style: GoogleFonts.kanit(
-              color: Colors.white,
+              color: Colors.indigo,
               fontSize: 21.0,
               fontWeight: FontWeight.bold,
             ),
@@ -175,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: const Color(0xFF99CB58),
+                      color: const Color(0xFF8332AC),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: Container(
-                      color: const Color(0xFF84BA3E),
+                      color: const Color(0xFF462749),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -258,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: const Color(0xFFDD5A6A),
+                      color: const Color(0xFF462749),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -296,7 +313,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: Container(
-                      color: const Color(0xFFDF776C),
+                      color: const Color(0xFF462749),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -343,7 +360,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      color: const Color(0xFFA2C6EA),
+                      color: const Color(0xFF462749),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -381,7 +398,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: Container(
-                      color: const Color(0xFF9B99CB),
+                      color: const Color(0xFF462749),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -425,7 +442,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: Container(
-                      color: const Color(0xFF7F7F7F),
+                      color: const Color(0xFFE086D3),
                       child: SizedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
