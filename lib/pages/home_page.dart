@@ -267,6 +267,8 @@ class _HomePageState extends State<HomePage>  with TickerProviderStateMixin {
               height: 5.0,
             ),
 
+
+
             // row 2
             SizedBox(
               height: 130.0,
@@ -353,6 +355,91 @@ class _HomePageState extends State<HomePage>  with TickerProviderStateMixin {
             ),
 
             // row 3
+            SizedBox(
+              height: 130.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: const Color(0xFF462749),
+                      child: SizedBox(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "ผู้ป่วยรายใหม่ในประเทศไทย",
+                                style: GoogleFonts.kanit(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                data.new_case_excludeabroad  != 0
+                                    ? "+${data.new_case_excludeabroad.toString().replaceAllMapped(reg, mathFunc)}"
+                                    : "-",
+                                style: GoogleFonts.kanit(
+                                  color: Colors.white,
+                                  fontSize: 35.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5.0,
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: const Color(0xFF462749),
+                      child: SizedBox(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "ผู้ป่วยเสียชีวิตสะสมในประเทศไทย",
+                                style: GoogleFonts.kanit(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                  "${data.total_case_excludeabroad.toString().replaceAllMapped(reg, mathFunc)}",
+                              style: GoogleFonts.kanit(
+                                  color: Colors.white,
+                                  fontSize: 35.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(
+              height: 5.0,
+            ),
+
+            // row 4
             SizedBox(
               height: 130.0,
               child: Row(
