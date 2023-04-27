@@ -20,13 +20,16 @@ class _RefreshState extends State<Refresh> {
         title: Text(
           'รายงานสถานการณ์ \n        COVID-19',
           style: GoogleFonts.lato(
-            color: Colors.white70,
+            color: Colors.white,
             fontSize: 42.0,
             fontWeight: FontWeight.bold,
           ),
         ),
+
         image: Image.asset('assets/images/refresh.png'),
-        imageBackground: AssetImage('assets/images/bg.png'),
+        backgroundColor: const Color(0xFF462749),
+
+        //imageBackground: AssetImage('assets/images/bg.png'),
         styleTextUnderTheLoader: const TextStyle(color: Colors.deepPurple),
         photoSize: 150.0,
         loaderColor: Colors.white70);
